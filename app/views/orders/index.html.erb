@@ -14,16 +14,20 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <td><%= order.user.email if order.user %></td>
         <td><%= order.status %></td>
         <td><%= order.date %></td>
         <td><%= link_to 'Show', order %></td>
+      <% if order.user == current_user %>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Order', new_order_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Order', new_order_path %>
+<% end %>

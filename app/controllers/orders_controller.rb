@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
 
   def index
     @orders = Order.all
@@ -9,14 +12,14 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
+    @order = current_user.orders.build
   end
 
   def edit
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = current_user.orders.build(order_params)
     if @order.save
       redirect_to @order, notice: 'Order was successfully created.'
     else
@@ -42,7 +45,12 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
     end
 
+    def correct_user
+      @order = current_user.orders.find_by(id: params[:id])
+      redirect_to orders_path, notice: "Not authorized to edit this order" if @order.nil?
+    end
+
     def order_params
-      params.require(:order).permit(:status, :date)
+      params.require(:order).permit(:status, :date, :user_id)
     end
 end

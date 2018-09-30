@@ -9,6 +9,7 @@
   <strong>Date:</strong>
   <%= @order.date %>
 </p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<% if pin.user == current_user %>
+	<%= link_to 'Edit', edit_order_path(@order) %> |
+	<%= link_to 'Back', orders_path %>
+<% end %>
