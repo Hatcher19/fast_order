@@ -9,7 +9,17 @@
   <strong>Date:</strong>
   <%= @order.date %>
 </p>
-<% if pin.user == current_user %>
+
+<% for line_item in @order.line_items %>
+	<%= line_item.league %>
+	<%= line_item.team %>
+	<%= line_item.division %>
+	<%= line_item.shirtcolor %>
+	<%= line_item.inkcolor %>
+	<%= line_item.quantity %>
+<% end %>
+
+<% if @order.user == current_user %>
 	<%= link_to 'Edit', edit_order_path(@order) %> |
 	<%= link_to 'Back', orders_path %>
 <% end %>

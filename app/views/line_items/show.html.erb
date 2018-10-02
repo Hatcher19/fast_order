@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>League:</strong>
+  <%= @line_item.league %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @line_item.team %>
+</p>
+
+<p>
+  <strong>Division:</strong>
+  <%= @line_item.division %>
+</p>
+
+<p>
+  <strong>Shirtcolor:</strong>
+  <%= @line_item.shirtcolor %>
+</p>
+
+<p>
+  <strong>Inkcolor:</strong>
+  <%= @line_item.inkcolor %>
+</p>
+
+<p>
+  <strong>Shirtsize:</strong>
+  <%= @line_item.shirtsize %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @line_item.quantity %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @line_item.user_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @line_item.order_id %>
+</p>
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>

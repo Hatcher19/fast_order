@@ -1,0 +1,33 @@
+<div class="form-group">
+  <%= f.label :league %>
+  <%= f.text_field :league %><br />
+</div>
+<div class="form-group">
+  <%= f.label :division %>
+  <%= f.text_field :division %><br />
+</div>
+<div class="form-group">
+  <%= f.label :team %>
+  <%= f.text_field :team %><br />
+</div>
+<div class="form-group">
+  <%= f.label :shirtcolor %>
+  <%= f.text_field :shirtcolor %><br />
+</div>
+<div class="form-group">
+  <%= f.label :inkcolor %>
+  <%= f.text_field :inkcolor %><br />
+</div>
+<div class="form-group">
+  <%= f.label :shirtsize %>
+  <%= f.text_field :shirtsize %><br />
+</div>
+<div class="form-group">
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %><br />
+</div>
+<% if params[:edit] == "edit" %>
+
+  <%= f.check_box :_destroy %>
+  <%= f.remove_nested_fields_link %>
+<% end %>

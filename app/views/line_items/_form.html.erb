@@ -1,0 +1,62 @@
+<%= form_with(model: line_item, local: true) do |form| %>
+  <% if line_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(line_item.errors.count, "error") %> prohibited this line_item from being saved:</h2>
+
+      <ul>
+      <% line_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :league %>
+    <%= form.text_field :league %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team %>
+    <%= form.text_field :team %>
+  </div>
+
+  <div class="field">
+    <%= form.label :division %>
+    <%= form.text_field :division %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shirtcolor %>
+    <%= form.text_field :shirtcolor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inkcolor %>
+    <%= form.text_field :inkcolor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shirtsize %>
+    <%= form.text_field :shirtsize %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_id %>
+    <%= form.number_field :order_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
