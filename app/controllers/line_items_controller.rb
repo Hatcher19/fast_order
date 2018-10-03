@@ -14,7 +14,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/new
   def new
-    @line_item = LineItem.new
+    @line_item = LineItem.new(order_id: params[:order_value])
   end
 
   # GET /line_items/1/edit
@@ -69,6 +69,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :user_id, :order_id)
+      params.require(:line_item).permit(:league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id)
     end
 end

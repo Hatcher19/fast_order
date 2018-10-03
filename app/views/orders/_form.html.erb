@@ -19,9 +19,6 @@
     <%= f.label :date %>
     <%= f.text_field :date, class: "form-control" %>
   </div>
-  <%= f.fields_for :line_items, LineItem.new do |builder| %>
-    <%= render "line_item_fields", :f => builder %>
-  <% end %>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
