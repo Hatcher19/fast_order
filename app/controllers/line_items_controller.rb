@@ -14,17 +14,20 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/new
   def new
-    @line_item = LineItem.new(order_id: params[:order_value])
+    @line_item = LineItem.new
   end
 
-  # GET /line_items/1/edit
+  def import
+    order = Order.find(params[:order_id])
+    LineItem.import(params[:file], order)
+    redirect_to order_path(order), notice: "Spreadsheet was successfully imported."
+  end
+  
   def edit
   end
 
-  # POST /line_items
-  # POST /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    @line_item = LineItem.new(line_item_params, :order_id => :order_id)
 
     respond_to do |format|
       if @line_item.save
@@ -69,6 +72,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id)
+      params.require(:line_item).permit(:league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id, :file)
     end
 end

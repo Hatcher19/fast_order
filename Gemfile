@@ -65,6 +65,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'nested_form_fields'
 gem 'simple_form'
+gem 'roo'
+gem "iconv"
 group :production do
      gem 'pg'
      gem 'rails_12factor'
