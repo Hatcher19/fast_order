@@ -21,6 +21,8 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.build(order_params)
     if @order.save
+      # Sends email to user when order is created. I may want to change this later to after line_items are created.
+      OrderMailer.new_order(@order).deliver
       redirect_to @order, notice: 'You are almost done!'
     else
       render :new

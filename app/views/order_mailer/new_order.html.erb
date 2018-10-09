@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Hi <%= @order.user.email %></h3>
+    <p>
+      Order #<%= @order.id %> was created at <%= @order.created_at.strftime("%m/%d/%y") %>
+      <%= link_to 'View Order', order_url(@order) %>
+    </p>
+  </body>
+</html>

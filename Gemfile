@@ -70,6 +70,7 @@ gem "iconv"
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem "figaro"
 group :production do
      gem 'pg'
      gem 'rails_12factor'
