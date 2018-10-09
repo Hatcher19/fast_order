@@ -103,7 +103,7 @@ Rails.application.configure do
     :authentication       => 'plain',  # change to ssl or tls as required
     :enable_starttls_auto => true,
     :tls                  => true, 
-    :openssl_verify_mode => true
+    :openssl_verify_mode  => OpenSSL::SSL::VERIFY_NONE
   }
 
 
