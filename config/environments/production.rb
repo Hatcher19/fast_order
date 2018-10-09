@@ -101,7 +101,7 @@ Rails.application.configure do
     :tsl                  => true,
     :user_name            => ENV['zoho_username'],  
     :password             => ENV['zoho_password'], 
-    :authentication       => '2fa',  # change to ssl or tls as required
+    :authentication       => 'plain',  # change to ssl or tls as required
     :enable_starttls_auto => true,
     :openssl_verify_mode => 'none'
   }
