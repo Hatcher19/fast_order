@@ -95,15 +95,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for zoho
-  ActionMailer::Base.smtp_settings = {  
-    :address              => 'smtp.zoho.com',  
-    :port                 => 587, # change to 465 if using ssl 
-    :tsl                  => true,
-    :user_name            => ENV['zoho_username'],  
-    :password             => ENV['zoho_password'], 
-    :authentication       => 'plain',  # change to ssl or tls as required
-    :enable_starttls_auto => true,
-    :openssl_verify_mode => 'none'
+  ActionMailer::Base.smtp_settings = {
+
+    :address            => 'smtp.zoho.com',
+    :port               => 587,
+    :domain             => 'zoho.com',
+    :authentication     => :plain,
+    :user_name          => ENV['zoho_username'],
+    :password           => ENV['zoho_password'],
+    :enable_starttls_auto => true
   }
 
 end
