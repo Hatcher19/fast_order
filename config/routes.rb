@@ -6,6 +6,6 @@ Rails.application.routes.draw do
    end
 
 	devise_for :users
-	root "pages#home"
+	root "orders#index"
 	get "faq" => "pages#faq"
 end

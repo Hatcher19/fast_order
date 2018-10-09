@@ -67,6 +67,9 @@ gem 'nested_form_fields'
 gem 'simple_form'
 gem 'roo'
 gem "iconv"
+gem 'bootstrap-datepicker-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 group :production do
      gem 'pg'
      gem 'rails_12factor'

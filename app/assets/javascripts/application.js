@@ -12,8 +12,12 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui/widgets/datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require bootstrap-sprockets
-//= require nested_form_fields
 //= require turbolinks
 //= require_tree .
 

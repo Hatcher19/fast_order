@@ -1,17 +1,73 @@
 <% if @order.line_items.exists? %>
-  <p>
-    <strong>Status:</strong>
-    <%= @order.status %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= @order.date %>
-  </p>
-  <h4><%= @order.line_items.count %></h4>
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>Daniel Hatcher</h4>
+      <%= @order.user.email %>
+      <h6>3303 W. Paul Ave</h6>
+      <h6>Tampa, Fl 33611</h6>
+      <h6>813.335.0330</h6>
+      <%= @order.tracking %>
+      <%= @order.ship_vendor %>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <%= link_to 'Edit Order', edit_order_path(@order), class: 'btn btn-lg btn-block btn-success' %>
+    </div>
+  </div>
+  <div class="row order-highlight">
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-header bg-primary center">
+          <h4>Order #</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <h1 class="center"><%= @order.id %></h1>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-header bg-primary center">
+          <h4>Status</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <h1 class="center"><%= @order.status.upcase %></h1>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-header bg-primary center">
+          <h4>Due Date</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <h1 class="center"><%= @order.date %></h1>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-header bg-primary center">
+          <h4>Shirt Count</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <h1 class="center"><%= @order.line_items.count %></h1>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
   <table class="table table-striped table-bordered table-hover">
     <thead>
-      <tr class="bg-info">
+      <tr class="bg-primary center">
         <th scope="col">League</th>
         <th scope="col">Team</th>
         <th scope="col">Division</th>
@@ -23,27 +79,28 @@
     </thead>
     <tbody>
       <% for line_item in @order.line_items %>
-      <tr>
-        <td scope="row"><%= line_item.league %></td>
-        <td scope="row"><%= line_item.team %></td>
-        <td scope="row"><%= line_item.division %></td>
-        <td scope="row"><%= line_item.shirtcolor %></td>
-        <td scope="row"><%= line_item.inkcolor %></td>
-        <td scope="row"><%= line_item.shirtsize %></td>
-        <td scope="row"><%= line_item.quantity %></td>
-      </tr>
+        <tr>
+          <td scope="row" class="center"><%= line_item.league %></td>
+          <td scope="row" class="center"><%= line_item.team %></td>
+          <td scope="row" class="center"><%= line_item.division %></td>
+          <td scope="row" class="center"><%= line_item.shirtcolor %></td>
+          <td scope="row" class="center"><%= line_item.inkcolor %></td>
+          <td scope="row" class="center"><%= line_item.shirtsize %></td>
+          <td scope="row" class="center"><%= line_item.quantity %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-Upload spreadsheet
-<h2>Import Products</h2>
-<%= form_tag import_line_items_path, multipart: true do %>
-  <%= hidden_field_tag :order_id, params[:id] %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
-
-
+  <div class="jumbotron center">
+    <h2>Upload spreadsheet</h2>
+    <br>
+    <%= form_tag import_line_items_path, multipart: true, class: 'center' do %>
+      <%= hidden_field_tag :order_id, params[:id] %>
+      <%= file_field_tag :file, style: 'margin: auto', class: 'btn btn-default btn-lg' %>
+      <br>
+      <%= submit_tag "Import Spreadsheet", class: 'btn btn-primary btn-lg' %>
+    <% end %>
+  </div>
 <% end %>
 

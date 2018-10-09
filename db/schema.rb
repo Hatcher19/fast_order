@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_06_055334) do
+ActiveRecord::Schema.define(version: 2018_10_09_002250) do
 
   create_table "line_items", force: :cascade do |t|
     t.string "league"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2018_10_06_055334) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "file"
+    t.string "tracking"
+    t.string "ship_vendor"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

@@ -10,6 +10,30 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui/datepicker
+ *= require bootstrap-datepicker3 
  *= require_tree .
  *= require_self
  */
+
+.order-highlight {
+	background-color: white;
+	padding: 2%;
+	margin-bottom: 2%;
+}
+
+a.navbar-brand {
+	    color: white;
+	}
+.navbar-nav > li > a {
+    color: white;
+}
+
+span.badge.badge-light {
+    color: red;
+    background-color: white;
+}
+.card h3 {
+    margin-top: 0px;
+}
+
