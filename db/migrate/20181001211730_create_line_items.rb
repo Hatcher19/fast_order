@@ -9,7 +9,6 @@ class CreateLineItems < ActiveRecord::Migration[5.2]
       t.string :shirtsize
       t.integer :quantity
       t.integer :user_id
-      t.integer :order_id
 
       t.timestamps
     end
