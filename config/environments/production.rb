@@ -92,14 +92,16 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { host: 'http://orderex.herokuapp.com/' }
+
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for zoho
   ActionMailer::Base.smtp_settings = {  
     :address              => 'smtp.zoho.com',  
     :port                 => 587, # change to 465 if using ssl 
-    :domain               => 'zoho.com', # if you have no domain  
+    :tls                  => true,
     :user_name            => ENV['zoho_username'],  
-    :password             => ENV['zoho_password'],  
+    :password             => ENV['zoho_password'], 
+    :app_password         => ENV['zoho_app_specific_password'], 
     :authentication       => 'plain',  # change to ssl or tls as required
     :enable_starttls_auto => true,
     :openssl_verify_mode => 'none'
