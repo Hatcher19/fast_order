@@ -100,8 +100,7 @@ Rails.application.configure do
     :port                 => 587, # change to 465 if using ssl 
     :tls                  => true,
     :user_name            => ENV['zoho_username'],  
-    :password             => ENV['zoho_password'], 
-    :app_password         => ENV['zoho_app_specific_password'], 
+    :password             => ENV['zoho_app_specific_password'], 
     :authentication       => 'plain',  # change to ssl or tls as required
     :enable_starttls_auto => true,
     :openssl_verify_mode => 'none'
