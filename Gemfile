@@ -71,6 +71,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "figaro"
+gem 'sparkpost_rails'
 group :production do
      gem 'pg'
      gem 'rails_12factor'
