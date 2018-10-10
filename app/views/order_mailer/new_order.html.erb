@@ -7,7 +7,7 @@
     <h3>Hi <%= @order.user.email %></h3>
     <p>
       Order #<%= @order.id %> was created at <%= @order.created_at.strftime("%m/%d/%y") %>
-      <%= link_to 'View Order', order_url(@order) %>
+      
     </p>
   </body>
 </html>
