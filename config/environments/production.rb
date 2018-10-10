@@ -89,22 +89,19 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'http://orderex.herokuapp.com/' }
-  config.action_mailer.delivery_method = :smtp
-  # SMTP settings for zoho
-  ActionMailer::Base.smtp_settings = {  
-    :address              => 'smtp.zoho.com',  
-    :port                 => 587, # change to 465 if using ssl 
-    :domain               => 'myshirtfund.com', # if you have no domain  
-    :user_name            => ENV['zoho_username'],  
-    :password             => ENV['zoho_password'],  
-    :authentication       => 'plain',  # change to ssl or tls as required
-    :enable_starttls_auto => true,
-    :tls                  => true, 
-    :openssl_verify_mode  => OpenSSL::SSL::VERIFY_NONE
-  }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:        ENV['SPARKPOST_SMTP_HOST'],
+    port:           ENV['SPARKPOST_SMTP_PORT'],
+    user_name:      ENV['SPARKPOST_SMTP_USERNAME'],
+    password:       ENV['SPARKPOST_SMTP_PASSWORD'],
+    domain:         'heroku.com',
+    authentication: :plain
+  }
+  config.action_mailer.default_url_options = {
+    :host => 'http://orderex.herokuapp.com/'
+  }
 
 end
