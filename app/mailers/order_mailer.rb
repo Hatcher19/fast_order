@@ -1,5 +1,5 @@
 class OrderMailer < ActionMailer::Base
-  default from: "no-reply@orderex.herokuapp.com"
+  default from: "orders@myshirtfund.com"
 
   def new_order(order)
     @order = order
