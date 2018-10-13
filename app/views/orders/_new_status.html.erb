@@ -15,7 +15,7 @@
       <tr>
         <!-- <td><%= order.user.email if order.user %></td> -->
         <td><%= link_to "#{order.id}", order %></td>
-        <td><%= link_to "#{order.line_items.first.league}", order %></td>
+        <td><%= link_to "#{order.line_items.first.league}", order if order.line_items.exists? %></td>
         <td><%= order.date %></td>
         <td><%= order.line_items.count %></td>
         <% if order.user == current_user %>

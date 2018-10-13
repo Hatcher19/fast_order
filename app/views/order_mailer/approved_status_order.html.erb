@@ -6,8 +6,7 @@
   <body>
     <h3>Hi <%= @order.user.email %></h3>
     <p>
-      Order #<%= @order.id %> was created at <%= @order.created_at.strftime("%m/%d/%y") %>
-      <%= link_to 'View Order', order_url(@order) %>
+      Order #<%= @order.id %> has been approved by a customer service representitive and is currently awaiting product.
     </p>
   </body>
 </html>

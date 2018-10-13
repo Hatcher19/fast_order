@@ -6,7 +6,8 @@
   <body>
     <h3>Hi <%= @order.user.email %></h3>
     <p>
-      Order #<%= @order.id %> was created at <%= @order.created_at.strftime("%m/%d/%y") %>
+      Order #<%= @order.id %> was shipped via <%= @order.ship_vendor %>
+      Here is your tracking number <%= @order.tracking %>
       <%= link_to 'View Order', order_url(@order) %>
     </p>
   </body>

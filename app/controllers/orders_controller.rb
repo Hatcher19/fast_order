@@ -31,6 +31,13 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update(order_params)
+      if @order.saved_change_to_attribute? :status, to: 'approved'
+        OrderMailer.approved_status_order(@order).deliver
+      elsif @order.saved_change_to_attribute? :status, to: 'printing'
+        OrderMailer.printing_status_order(@order).deliver
+      elsif @order.saved_change_to_attribute? :status, to: 'shipped'
+        OrderMailer.shipped_status_order(@order).deliver
+      end         
       redirect_to @order, notice: 'Order was successfully updated.'
     else
       render :edit

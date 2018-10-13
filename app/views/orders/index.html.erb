@@ -1,4 +1,8 @@
 <% if user_signed_in? %>
+  <%= link_to "Create Order", new_order_path, class: 'btn btn-primary btn-lg' %>
+  <br><br>
+  <div class="jumbotron">
+  </div>
   <% if @orders.where(user_id: current_user).exists? %>
     <div class="">
       <div class="row">
@@ -24,19 +28,6 @@
             <div class="card-body">
               <p class="card-text">
                 <%= render 'approved_status' %>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-          <div class="card">
-            <div class="card-header bg-danger border-success center">
-              Awaiting Product
-              <span class="badge badge-light"><%= Order.where(status: "awaiting product", user: current_user).count %></span>
-            </div>
-            <div class="card-body">
-              <p class="card-text"></p>
-                <%= render 'awaiting_product_status' %>
               </p>
             </div>
           </div>
