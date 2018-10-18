@@ -92,8 +92,15 @@
     </tbody>
   </table>
 <% else %>
-  <div class="jumbotron center">
-    <h2>Upload spreadsheet</h2>
+  <div class="jumbotron">
+    <h2>Upload roster</h2>
+    <ol>
+      <li><a href="https://docs.google.com/spreadsheets/d/1PNwqfZvXkEw4AqROKgTKhBNhTMBW6KoopW034X8pMaI/edit?usp=sharing" target="_blank">Click here for example spreadsheet</a></li>
+      <li>File -> Make copy</li>
+      <li>Fill out your roster</li>
+      <li>File -> download Comma seperated value (CSV)</li>
+      <li>Upload that file below</li>
+    </ol>
     <br>
     <%= form_tag import_line_items_path, multipart: true, class: 'center' do %>
       <%= hidden_field_tag :order_id, params[:id] %>
