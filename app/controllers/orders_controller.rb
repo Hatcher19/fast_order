@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  load_and_authorize_resource
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
@@ -60,6 +61,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:status, :date, :user_id, :tracking, :ship_vendor, line_items_attributes: [:id, :league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id])
+      params.require(:order).permit(:status, :date, :user_id, :address_id, :tracking, :ship_vendor, line_items_attributes: [:id, :league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id])
     end
 end

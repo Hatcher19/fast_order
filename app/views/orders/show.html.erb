@@ -1,18 +1,20 @@
 <% if @order.line_items.exists? %>
   <div class="row">
     <div class="col-sm-4">
-      <h4>Daniel Hatcher</h4>
+      <h6><%= @order.address.contact_name  %></h6>
+      <h6><%= @order.address.street  %></h6>
+      <h6><%= @order.address.unit  %></h6>
+      <h6><%= @order.address.city  %>, <%= @order.address.state  %> <%= @order.address.zipcode  %></h6>
       <%= @order.user.email %>
-      <h6>3303 W. Paul Ave</h6>
-      <h6>Tampa, Fl 33611</h6>
-      <h6>813.335.0330</h6>
       <%= @order.tracking %>
       <%= @order.ship_vendor %>
     </div>
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
-      <%= link_to 'Edit Order', edit_order_path(@order), class: 'btn btn-lg btn-block btn-success' %>
+      <% if can? :update, Order %>
+        <%= link_to 'Edit Order', edit_order_path(@order), class: 'btn btn-lg btn-block btn-success' %>
+      <% end %>
     </div>
   </div>
   <div class="row order-highlight">

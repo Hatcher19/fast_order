@@ -11,18 +11,34 @@
   </thead>
 
   <tbody>
-    <% Order.where(status: "new", user: current_user).each do |order| %>
-      <tr>
-        <!-- <td><%= order.user.email if order.user %></td> -->
-        <td><%= link_to "#{order.id}", order %></td>
-        <td><%= link_to "#{order.line_items.first.league}", order if order.line_items.exists? %></td>
-        <td><%= order.date %></td>
-        <td><%= order.line_items.count %></td>
-        <% if order.user == current_user %>
-          <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td>
-          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-        <% end %>
-      </tr>
+    <% if current_user.role == "admin" %>
+      <% Order.where(status: "new").each do |order| %>
+        <tr>
+          <!-- <td><%= order.user.email if order.user %></td> -->
+          <td><%= link_to "#{order.id}", order %></td>
+          <td><%= link_to "#{order.line_items.first.league}", order if order.line_items.exists? %></td>
+          <td><%= order.date %></td>
+          <td><%= order.line_items.count %></td>
+          <% if order.user == current_user %>
+            <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td>
+            <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <% end %>
+        </tr>
+      <% end %>
+    <% else %>
+      <% Order.where(status: "new", user: current_user).each do |order| %>
+        <tr>
+          <!-- <td><%= order.user.email if order.user %></td> -->
+          <td><%= link_to "#{order.id}", order %></td>
+          <td><%= link_to "#{order.line_items.first.league}", order if order.line_items.exists? %></td>
+          <td><%= order.date %></td>
+          <td><%= order.line_items.count %></td>
+          <% if order.user == current_user %>
+            <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td>
+            <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <% end %>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

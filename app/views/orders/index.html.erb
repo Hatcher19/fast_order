@@ -1,16 +1,22 @@
 <% if user_signed_in? %>
-  <%= link_to "Create Order", new_order_path, class: 'btn btn-primary btn-lg' %>
-  <br><br>
-  <div class="jumbotron">
-  </div>
   <% if @orders.where(user_id: current_user).exists? %>
+    <%= link_to "Create Order", new_order_path, class: 'btn btn-primary btn-lg' %>
+    <br><br>
+    <div class="jumbotron">
+    </div>
     <div class="">
       <div class="row">
         <div class="col-sm-6 col-md-6">
           <div class="card">
             <div class="card-header bg-primary border-success center">
               New
-              <span class="badge badge-light"><%= Order.where(status: "new", user: current_user).count %></span>
+              <span class="badge badge-light">
+                <% if current_user.role == 'admin' %>
+                  <%= Order.where(status: "new").count %>
+                <% else %>
+                  <%= Order.where(status: "new", user: current_user).count %>
+                <% end %>
+              </span>
             </div>
             <div class="card-body">
               <p class="card-text">
@@ -23,7 +29,13 @@
           <div class="card">
             <div class="card-header bg-success border-success center">
               Approved
-              <span class="badge badge-light"><%= Order.where(status: "approved", user: current_user).count %></span>
+              <span class="badge badge-light">
+                <% if current_user.role == 'admin' %>
+                  <%= Order.where(status: "approved").count %>
+                <% else %>
+                  <%= Order.where(status: "approved", user: current_user).count %>
+                <% end %>                  
+              </span>
             </div>
             <div class="card-body">
               <p class="card-text">
@@ -36,7 +48,13 @@
           <div class="card">
             <div class="card-header bg-warning border-success center">
               Printing
-              <span class="badge badge-light"><%= Order.where(status: "printing", user: current_user).count %></span>
+              <span class="badge badge-light">
+                <% if current_user.role == 'admin' %>
+                  <%= Order.where(status: "printing").count %>
+                <% else %>
+                  <%= Order.where(status: "printing", user: current_user).count %>
+                <% end %>                  
+              </span>
             </div>
             <div class="card-body">
               <p class="card-text"></p>
@@ -49,7 +67,13 @@
           <div class="card">
             <div class="card-header bg-info border-success center">
               Shipped
-              <span class="badge badge-light"><%= Order.where(status: "shipped", user: current_user).count %></span>
+              <span class="badge badge-light">
+                <% if current_user.role == 'admin' %>
+                  <%= Order.where(status: "shipped").count %>
+                <% else %>
+                  <%= Order.where(status: "shipped", user: current_user).count %>
+                <% end %>                  
+              </span>
             </div>
             <div class="card-body">
               <p class="card-text"></p>

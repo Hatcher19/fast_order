@@ -1,0 +1,39 @@
+<%= simple_form_for(@address, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% @address.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.input :address_name, label: 'Address nickname'  %>
+  </div>
+  <div class="form-group">
+    <%= f.input :contact_name  %>
+  </div>
+  <div class="form-group">
+    <%= f.input :street  %>
+  </div>
+  <div class="form-group">
+    <%= f.input :unit  %>
+  </div>
+  <div class="form-group">
+    <%= f.input :city  %>
+  </div>
+  <div class="form-group">
+    <%= f.input :state  %>
+  </div>
+  <div class="form-group">
+    <%= f.input :zipcode  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+

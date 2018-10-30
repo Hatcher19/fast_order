@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_002250) do
+ActiveRecord::Schema.define(version: 2018_10_30_124432) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "street"
+    t.string "unit"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "address_name"
+    t.integer "user_id"
+    t.string "contact_name"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
 
   create_table "line_items", force: :cascade do |t|
     t.string "league"
@@ -36,6 +50,8 @@ ActiveRecord::Schema.define(version: 2018_10_09_002250) do
     t.string "file"
     t.string "tracking"
     t.string "ship_vendor"
+    t.integer "address_id"
+    t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -47,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_002250) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

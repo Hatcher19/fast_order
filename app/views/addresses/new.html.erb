@@ -1,0 +1,7 @@
+<% if Address.where(user_id: current_user).count == 0 %>
+	<h1>Create atleast 1 shipping address.</h1>
+	<h3>This will be required to submit an order.</h3>
+	<%= render 'form' %>
+<% else %>
+	<%= render 'form' %>
+<% end %>

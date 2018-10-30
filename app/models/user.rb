@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders
+  has_many :addresses
+
+  Roles = [ :admin , :operator ]
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
 end
