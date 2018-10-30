@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :update, :destroy]
 
 
   def index
@@ -53,11 +52,6 @@ class OrdersController < ApplicationController
   private
     def set_order
       @order = Order.find(params[:id])
-    end
-
-    def correct_user
-      @order = current_user.orders.find_by(id: params[:id])
-      redirect_to orders_path, notice: "Not authorized to edit this order" if @order.nil?
     end
 
     def order_params
