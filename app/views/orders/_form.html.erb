@@ -52,6 +52,13 @@
   <div class="form-group">
       <%= f.input :address_id, collection: Address.where(user_id: current_user).map{|x| [x.address_name, x.id]}, include_blank: false %>
     </div>
+    <ol>
+      <li><a href="https://docs.google.com/spreadsheets/d/1PNwqfZvXkEw4AqROKgTKhBNhTMBW6KoopW034X8pMaI/copy" target="_blank">Click here for example spreadsheet</a></li>
+      <li>Fill out your roster</li>
+      <li>Copy the URL</li>
+      <li>Paste URL below</li>
+    </ol>
+    <%= f.input :spreadsheet_link %>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
