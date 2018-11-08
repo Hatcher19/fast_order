@@ -72,6 +72,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id, :file)
+      params.require(:line_item).permit(:league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :shirt_quantity, :order_id, :file)
     end
 end

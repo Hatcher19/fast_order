@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @line_items = @order.line_items.group(:team, :shirtcolor, :inkcolor).sum(:quantity)
+    @line_items = @order.line_items.group(:team, :shirtcolor, :inkcolor).sum(:shirt_quantity)
   end
 
   def new
@@ -56,6 +56,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:status, :date, :user_id, :address_id, :tracking, :ship_vendor, :spreadsheet_link, line_items_attributes: [:id, :league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :quantity, :order_id])
+      params.require(:order).permit(:status, :date, :user_id, :address_id, :tracking, :ship_vendor, :spreadsheet_link, line_items_attributes: [:id, :league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :shirt_quantity, :order_id])
     end
 end

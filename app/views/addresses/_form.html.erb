@@ -26,7 +26,7 @@
     <%= f.input :city  %>
   </div>
   <div class="form-group">
-    <%= f.input :state  %>
+    <%= f.input :state, as: :select, collection: Address::STATES %>
   </div>
   <div class="form-group">
     <%= f.input :zipcode  %>

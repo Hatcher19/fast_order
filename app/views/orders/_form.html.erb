@@ -1,66 +1,111 @@
-<%= simple_form_for(@order, :html => {:class => "form-horizontal"}) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title row">
+      <h1 class="col-md-10">New Order</h1>
+      <div class="col-md-2">
+        <%= link_to "Back", :back, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= simple_form_for(@order, :html => {:class => "form"}) do |f| %>
+      <% if @order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @order.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <% if @order.new_record? %>
-    <%= f.hidden_field :status, value: "new" %>
-  <% else %>
-    <div class="form-group">
-      <%= f.input :status, collection: ['new', 'approved', 'printing', 'shipped' ], include_blank: false %>
-    </div>
-    <div class="form-group">
-      <%= f.input :tracking %>
-    </div>
-    <div class="form-group">
-      <%= f.input :ship_vendor, collection: ['', 'ups', 'fedex', 'usps' ], include_blank: false  %>
-    </div>
-  <% end %>
-  <% if @order.new_record? %>
-    <div class="form-group">
-      <%= f.label :date, "Desired in-hands date?" %>
-      <%= f.text_field :date, class: 'datepicker' %> 
+      <% if @order.new_record? %>
+        <%= f.hidden_field :status, value: "new" %>
+      <% else %>
+        <div class="form-group">
+          <%= f.input :status, collection: ['new', 'approved', 'printing', 'shipped' ], include_blank: false %>
+        </div>
+        <div class="form-group">
+          <%= f.input :tracking %>
+        </div>
+        <div class="form-group">
+          <%= f.input :ship_vendor, collection: ['', 'ups', 'fedex', 'usps' ], include_blank: false  %>
+        </div>
+      <% end %>
+      <% if @order.new_record? %>
+        <div class="form-group">
+          <%= f.label :date, "Desired in-hands date?" %></div>
+          <%= f.text_field :date, class: 'datepicker' %> 
 
-      <script type="text/javascript">
-        $(function() {
-          $('.datepicker').datepicker();
-        });
-      </script>
-    </div>
-  <% else %>
-    <% if can? :update, Order %>
+          <script type="text/javascript">
+            $(function() {
+              $('.datepicker').datepicker();
+            });
+          </script>
+        </div>
+      <% else %>
+        <% if can? :update, Order %>
+          <div class="form-group">
+            <%= f.label :date, "Desired in-hands date?" %>
+            <%= f.text_field :date, class: 'datepicker' %> 
+
+            <script type="text/javascript">
+              $(function() {
+                $('.datepicker').datepicker();
+              });
+            </script>
+          </div>
+        <% end %>
+      <% end %>
       <div class="form-group">
-        <%= f.label :date, "Desired in-hands date?" %>
-        <%= f.text_field :date, class: 'datepicker' %> 
+        <%= f.input :address_id do %>
+          <%= f.select :address_id, Address.where(user_id: current_user).map {|x| [x.address_name, x.id] }, {}, class: "form-control form-control-lg", style: "width: 50%; margin-left: 1%" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal" style="margin-left: 5%;">
+          Spreadsheet Instructions
+        </button>
+      </div>
 
-        <script type="text/javascript">
-          $(function() {
-            $('.datepicker').datepicker();
-          });
-        </script>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Spreadsheet Instructions</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ol>
+                <li><a href="https://docs.google.com/spreadsheets/d/1PNwqfZvXkEw4AqROKgTKhBNhTMBW6KoopW034X8pMaI/copy" target="_blank">Click here for example spreadsheet</a></li>
+                <li>Fill out your roster</li>
+                <li>Copy the editable link</li>
+                <li>Paste URL below</li>
+              </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><a href="https://docs.google.com/spreadsheets/d/1PNwqfZvXkEw4AqROKgTKhBNhTMBW6KoopW034X8pMaI/copy" target="_blank">Example spreadsheet</a></p>
+      <div class="form-group">
+        <%= f.input :spreadsheet_link, class: "form-control", style: "width: 50%" %>
+      </div>
+      <% if current_user.role == 'admin' %>
+        <%= f.input :user_id do %>
+          <%= f.select :user_id, User.all.map {|x| [x.email, x.id] }, {}, class: "form-control form-control-lg", style: "width: 50%; margin-left: 1%" %>
+        <% end %>
+      <% end %>
+      <h3>Hard Goods</h3>
+      <div class="form-group">
+        <%= f.submit class: "btn btn-primary" %>
       </div>
     <% end %>
-  <% end %>
-
-  <div class="form-group">
-      <%= f.input :address_id, collection: Address.where(user_id: current_user).map{|x| [x.address_name, x.id]}, include_blank: false %>
-    </div>
-    <ol>
-      <li><a href="https://docs.google.com/spreadsheets/d/1PNwqfZvXkEw4AqROKgTKhBNhTMBW6KoopW034X8pMaI/copy" target="_blank">Click here for example spreadsheet</a></li>
-      <li>Fill out your roster</li>
-      <li>Copy the URL</li>
-      <li>Paste URL below</li>
-    </ol>
-    <%= f.input :spreadsheet_link %>
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
   </div>
-<% end %>
-
+</div>

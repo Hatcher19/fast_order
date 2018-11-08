@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_150329) do
+ActiveRecord::Schema.define(version: 2018_11_08_131317) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 2018_11_05_150329) do
     t.string "shirtcolor"
     t.string "inkcolor"
     t.string "shirtsize"
-    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order_id"
     t.string "file"
+    t.integer "shirt_quantity"
     t.index ["order_id"], name: "index_line_items_on_order_id"
   end
 
