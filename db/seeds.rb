@@ -6,9 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create( email: 'daniel@piratebayprinting.com', password: 'password', role: 'admin' )
-User.create( email: 'joey@piratebayprinting.com', password: 'password', role: 'admin' )
-User.create( email: 'pat@piratebayprinting.com', password: 'password', role: 'admin' )
+User.create( email: 'mokeefe@uaflag.com', password: 'password', role: 'operator' )
 # Product.create( product_category: 'hard goods', name: 'ua football' )
 # Product.create( product_category: 'hard goods', name: 'field striper' )
 # Product.create( product_category: 'hard goods', name: 'pylons(4)' )
