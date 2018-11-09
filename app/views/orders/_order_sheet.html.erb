@@ -17,212 +17,212 @@
     <tbody>
       <tr>
         <td scope="row">001 BLACK</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '001 BLACK', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td scope="row">025 HTH GRAY</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '025 HTH GRAY', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td scope="row">090 CARB GRAY</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '090 CARB GRAY', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>100 WHITE</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '100 WHITE', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>301 DK GREEN</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '301 DK GREEN', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>400 ROYAL</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '400 ROYAL', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>410 NAVY</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '410 NAVY', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>475 CAR BLUE</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '475 CAR BLUE', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>500 PURPLE</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '500 PURPLE', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>600 RED</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '600 RED', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>609 MAROON</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '609 MAROON', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>731 HI VIS YELLOW</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '731 HI VIS YELLOW', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>750 STEEL TOWN GOLD</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '750 STEEL TOWN GOLD', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>860 DK ORANGE</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '860 DK ORANGE', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
       <tr>
         <td>985 CORAL</td>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YS').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YM').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YXL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'S').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'M').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'L').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: '2XL').count %>
-        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: '3XL').count %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YS').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YM').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'YXL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'S').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'M').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'L').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: 'XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: '2XL').sum(:shirt_quantity) %>
+        <td scope="row" class="center"><%= @order.line_items.where(shirtcolor: '985 CORAL', shirtsize: '3XL').sum(:shirt_quantity) %>
         </td>
       </tr>
     </tbody>

@@ -61,7 +61,7 @@
         </div>
         <div class="card-body">
           <p class="card-text">
-            <h1 class="center"><%= @order.line_items.count %></h1>
+            <h1 class="center"><%= @order.line_items.sum(:shirt_quantity) %></h1>
           </p>
         </div>
       </div>
