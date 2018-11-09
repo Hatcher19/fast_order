@@ -78,6 +78,9 @@
         <% end %>
       <% end %>
       <div class="form-group">
+          <%= f.input :entity, as: :select, collection: Order::BIA_ENTITIES %>
+        </div>
+      <div class="form-group">
         <%= f.submit class: "btn btn-primary" %>
       </div>
     <% end %>
