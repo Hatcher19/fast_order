@@ -21,7 +21,7 @@
           <tr>
             <td><%= link_to "#{ord.id}",(ord) %></td>
             <td><%= ord.created_at.strftime("%m.%d.%Y") %></td>
-            <td><%= ord.line_items.count %></td>
+            <td><%= ord.line_items.sum(:shirt_quantity) %></td>
             <td><%= ord.date %></td>
             <td><%= ord.status %></td>
           </tr>

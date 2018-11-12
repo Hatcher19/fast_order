@@ -58,11 +58,15 @@
           </div>
         <% end %>
       <% end %>
-      <div class="form-group">
-        <%= f.input :address_id do %>
-          <%= f.select :address_id, Address.where(user_id: current_user).map {|x| [x.address_name, x.id] }, {}, class: "form-control form-control-lg", style: "width: 50%; margin-left: 1%" %>
-        <% end %>
-      </div>
+      <% if current_user.role == 'operator' %>
+        <div class="form-group">
+          <%= f.input :address_id do %>
+            <%= f.select :address_id, Address.where(user_id: current_user).map {|x| [x.address_name, x.id] }, {}, class: "form-control form-control-lg", style: "width: 50%; margin-left: 1%" %>
+          <% end %>
+        </div>
+      <% elsif current_user.role == 'admin' %>
+        <%= f.select :address_id, Address.all.map {|x| [x.address_name, x.id] }, {}, class: "form-control form-control-lg", style: "width: 50%; margin-left: 1%" %>
+      <% end %>
       <ol>
         <li><a href="https://docs.google.com/spreadsheets/d/1PNwqfZvXkEw4AqROKgTKhBNhTMBW6KoopW034X8pMaI/copy" target="_blank">Click here for example spreadsheet</a></li>
         <li>Fill out your roster</li>
