@@ -8,6 +8,7 @@
       <%= @order.user.email %>
       <%= @order.tracking %>
       <%= @order.ship_vendor %>
+      <br><%= link_to 'spreadsheet', @order.spreadsheet_link %>
     </div>
     <div class="col-sm-4">
     </div>
@@ -81,7 +82,7 @@
         </li>
       </ul>
     </div>
-    <div class="card-body collapse" id="overview">
+    <div class="card-body collapse in" id="overview">
       <%= render 'overview' %>
     </div>
     <div class="card-body collapse" id="printTotal">

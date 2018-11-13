@@ -8,6 +8,10 @@
       <th scope="col" class="center">Ink Color</th>
       <th scope="col" class="center">Size</th>
       <th scope="col" class="center">Quantity</th>
+      <% if current_user.role == 'admin' %>
+        <th scope="col" class="center">Edit</th>
+        <th scope="col" class="center">Delete</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +24,13 @@
         <td scope="row" class="center"><%= line_item.inkcolor %></td>
         <td scope="row" class="center"><%= line_item.shirtsize %></td>
         <td scope="row" class="center"><%= line_item.shirt_quantity %></td>
+        <% if current_user.role == 'admin' %>
+          <td scope="row" class="center">
+            <%= link_to 'Edit', edit_line_item_path(line_item) %></td>
+          <td scope="row" class="center">
+            <%= link_to 'Destroy', line_item_path(line_item),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
