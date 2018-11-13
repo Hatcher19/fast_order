@@ -26,10 +26,14 @@
         <td scope="row" class="center"><%= line_item.shirt_quantity %></td>
         <% if current_user.role == 'admin' %>
           <td scope="row" class="center">
-            <%= link_to 'Edit', edit_line_item_path(line_item) %></td>
+            <%= link_to edit_line_item_path(line_item) do %>
+              <i class="fas fa-pen-square fa-2x"></i>
+            <% end %>
+            </td>
           <td scope="row" class="center">
-            <%= link_to 'Destroy', line_item_path(line_item),
-            data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
+            <%= link_to line_item_path(line_item), data: {:confirm => 'Are you sure?'}, :method => :delete do %>
+              <i class="fas fa-trash fa-2x"></i>
+            <% end %>
         <% end %>
       </tr>
     <% end %>
