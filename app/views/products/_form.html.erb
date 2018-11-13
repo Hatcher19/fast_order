@@ -1,0 +1,20 @@
+
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+	  <%= f.input :name %>
+  </div>
+  <div class="form-inputs">
+	  <%= f.input :product_category, as: :select, collection: Product::CATEGORIES %>
+  </div>
+  <p>Hint: After you copy the public Dropbox link to your clipboard, just change ?dl=0 to ?raw=1 at the end of the URL.</p>
+  <div class="form-inputs">
+	  <%= f.input :image_url %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

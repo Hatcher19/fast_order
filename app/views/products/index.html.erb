@@ -1,0 +1,108 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'product_nav' %>
+  </div>
+  <div class="col-md-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="row tab-pane fade in active" id="v-pills-acc" role="tabpanel" aria-labelledby="v-pills-acc-tab">
+        <% @products.where(product_category: 'acc').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-big10" role="tabpanel" aria-labelledby="v-pills-big10-tab">
+        <% @products.where(product_category: 'big10').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-big12" role="tabpanel" aria-labelledby="v-pills-big12-tab">
+        <% @products.where(product_category: 'big12').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-nfl" role="tabpanel" aria-labelledby="v-pills-nfl-tab">
+        <% @products.where(product_category: 'nfl').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-other" role="tabpanel" aria-labelledby="v-pills-other-tab">
+        <% @products.where(product_category: 'other').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-pac12" role="tabpanel" aria-labelledby="v-pills-pac12-tab">
+        <% @products.where(product_category: 'pac12').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-sec" role="tabpanel" aria-labelledby="v-pills-sec-tab">
+        <% @products.where(product_category: 'sec').each_slice(4) do |products| %>
+          <div class="row">
+            <% products.each do |p| %>
+              <div class="col-md-3">
+                <img class="card-img-top" src="<%= p.image_url %>" alt="<%= p.name %>" style="width: 100%;">
+                <div class="card-body">
+                  <b><p class="card-title center"><%= p.name.upcase %></p></b>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
