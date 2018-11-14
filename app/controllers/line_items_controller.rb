@@ -20,6 +20,17 @@ class LineItemsController < ApplicationController
     @yellow_sum = @line_items.where(shirtcolor: '731 HI VIS YELLOW').sum(:shirt_quantity).to_f
     @steel_town_sum = @line_items.where(shirtcolor: '750 STEEL TOWN GOLD').sum(:shirt_quantity).to_f
     @orange_sum = @line_items.where(shirtcolor: '860 DK ORANGE').sum(:shirt_quantity).to_f
+    @ys_sum = @line_items.where(shirtsize: 'YS').sum(:shirt_quantity).to_f
+    @ym_sum = @line_items.where(shirtsize: 'YM').sum(:shirt_quantity).to_f
+    @yl_sum = @line_items.where(shirtsize: 'YL').sum(:shirt_quantity).to_f
+    @yxl_sum = @line_items.where(shirtsize: 'YXL').sum(:shirt_quantity).to_f
+    @s_sum = @line_items.where(shirtsize: 'S').sum(:shirt_quantity).to_f
+    @m_sum = @line_items.where(shirtsize: 'M').sum(:shirt_quantity).to_f
+    @l_sum = @line_items.where(shirtsize: 'L').sum(:shirt_quantity).to_f
+    @xl_sum = @line_items.where(shirtsize: 'XL').sum(:shirt_quantity).to_f
+    @xxl_sum = @line_items.where(shirtsize: 'XXL').sum(:shirt_quantity).to_f
+    @xxxl_sum = @line_items.where(shirtsize: 'XXXL').sum(:shirt_quantity).to_f
+    @xxxxl_sum = @line_items.where(shirtsize: 'XXXXL').sum(:shirt_quantity).to_f
   end
 
   # GET /line_items/1
