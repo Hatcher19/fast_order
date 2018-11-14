@@ -5,6 +5,21 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @line_items = LineItem.all
+    @sum = @line_items.sum(:shirt_quantity).to_f
+    @black_sum = @line_items.where(shirtcolor: '001 BLACK').sum(:shirt_quantity).to_f
+    @true_sum = @line_items.where(shirtcolor: '025 HTH GRAY').sum(:shirt_quantity).to_f
+    @carbon_sum = @line_items.where(shirtcolor: '090 CARB GRAY').sum(:shirt_quantity).to_f
+    @white_sum = @line_items.where(shirtcolor: '100 WHITE').sum(:shirt_quantity).to_f
+    @green_sum = @line_items.where(shirtcolor: '301 DK GREEN').sum(:shirt_quantity).to_f
+    @royal_sum = @line_items.where(shirtcolor: '400 ROYAL').sum(:shirt_quantity).to_f
+    @navy_sum = @line_items.where(shirtcolor: '410 NAVY').sum(:shirt_quantity).to_f
+    @carolina_sum = @line_items.where(shirtcolor: '475 CAR BLUE').sum(:shirt_quantity).to_f
+    @purple_sum = @line_items.where(shirtcolor: '500 PURPLE').sum(:shirt_quantity).to_f
+    @red_sum = @line_items.where(shirtcolor: '600 RED').sum(:shirt_quantity).to_f
+    @maroon_sum = @line_items.where(shirtcolor: '609 MAROON').sum(:shirt_quantity).to_f
+    @yellow_sum = @line_items.where(shirtcolor: '731 HI VIS YELLOW').sum(:shirt_quantity).to_f
+    @steel_town_sum = @line_items.where(shirtcolor: '750 STEEL TOWN GOLD').sum(:shirt_quantity).to_f
+    @orange_sum = @line_items.where(shirtcolor: '860 DK ORANGE').sum(:shirt_quantity).to_f
   end
 
   # GET /line_items/1
