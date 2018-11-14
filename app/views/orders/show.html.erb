@@ -1,98 +1,86 @@
 <% if @order.line_items.exists? %>
   <div class="row">
-    <div class="col-sm-4">
-      <h6><%= @order.address.contact_name  %></h6>
-      <h6><%= @order.address.street  %></h6>
-      <h6><%= @order.address.unit  %></h6>
-      <h6><%= @order.address.city  %>, <%= @order.address.state  %> <%= @order.address.zipcode  %></h6>
-      <%= @order.user.email %>
-      <%= @order.tracking %>
-      <%= @order.ship_vendor %>
-      <br><%= link_to 'spreadsheet', @order.spreadsheet_link %>
-    </div>
-    <div class="col-sm-4">
-    </div>
-    <div class="col-sm-4">
-      <% if can? :update, Order %>
-        <%= link_to 'Edit Order', edit_order_path(@order), class: 'btn btn-lg btn-block btn-success' %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row order-highlight">
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-primary center">
-          <h4>Order #</h4>
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            <h1 class="center"><%= @order.id %></h1>
-          </p>
+    <div class="card">
+      <div class="row card-header">
+        <div class="col-md-4"><h3>Order #<%= @order.id %></h3></div>
+        <div class="col-md-7"></div>
+        <div class="col-md-1">
+          <% if can? :update, Order %>
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Actions
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <%= link_to 'Edit Order', edit_order_path(@order), class: 'dropdown-item' %>
+                <%= link_to 'Destroy', @order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
+                <%= link_to 'Box label', 'box_label', class: 'dropdown-item', data: { toggle: 'modal', target: '#exampleModal' } %> 
+                <%= link_to 'spreadsheet', @order.spreadsheet_link, class: 'dropdown-item' %>             
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-primary center">
-          <h4>Status</h4>
-        </div>
-        <div class="card-body">
+      <div class="row card-body">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <h5 class="card-title">Ship to:</h5>
           <p class="card-text">
-            <h1 class="center"><%= @order.status.upcase %></h1>
+            <%= @order.address.contact_name  %><br>
+            <%= @order.address.street  %><br>
+            <%= @order.address.unit  %>
+            <%= @order.address.city  %>, <%= @order.address.state  %> <%= @order.address.zipcode  %><br>
+            <%= @order.user.email %>
+            <%= @order.tracking %>
+            <%= @order.ship_vendor %>
           </p>
         </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-primary center">
-          <h4>Due Date</h4>
-        </div>
-        <div class="card-body">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
+          <h5 class="card-title">Details</h5>
           <p class="card-text">
-            <h1 class="center"><%= @order.date %></h1>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-header bg-primary center">
-          <h4>Shirt Count</h4>
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            <h1 class="center"><%= @order.line_items.sum(:shirt_quantity) %></h1>
+            <button type="button" class="btn btn-info" style="margin-bottom: 2%;">
+              Status <span class="badge badge-light"><%= @order.status.upcase %></span>
+            </button><br>
+            <button type="button" class="btn btn-danger" style="margin-bottom: 2%;">
+              Date <span class="badge badge-light"><%= @order.date %></span>
+            </button><br>
+            <button type="button" class="btn btn-warning" style="margin-bottom: 2%;">
+              Shirt Total <span class="badge badge-light"><%= @order.line_items.sum(:shirt_quantity) %></span>
+            </button>
           </p>
         </div>
       </div>
     </div>
   </div>
+
   <div class="card text-center">
     <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="collapse" href="#overview" role="button" aria-expanded="false" aria-controls="overview">Overview</a>
+          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#printTotal" role="button" aria-expanded="false" aria-controls="printTotal">Print Total</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#productTotals" role="button" aria-expanded="false" aria-controls="productTotals">Product Total</a>
-        </li>
+        <% if current_user.role == 'admin' %>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Print</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Product</a>
+          </li>
+        <% end %>
       </ul>
-    </div>
-    <div class="card-body collapse in" id="overview">
-      <%= render 'overview' %>
-    </div>
-    <div class="card-body collapse" id="printTotal">
-      <%= render 'print_total' %>
-    </div>
-    <div class="card-body collapse" id="productTotals">
-      <%= render 'order_sheet' %>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <%= render 'overview' %>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <%= render 'print_total' %>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <%= render 'order_sheet' %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 <% else %>
   <div class="jumbotron">
     <% if current_user.role == "operator" %>
@@ -113,7 +101,7 @@
   </div>
 <% end %>
 
-
+<%= render 'box_label' %>
 
 
 
