@@ -245,7 +245,17 @@
         <tr>
           <td><%= inv.sku %></td>
           <td><%= inv.created_at.strftime("%m.%d.%Y %I:%M %P") %> EST</td>
-          <td><%= link_to "edit", edit_inventory_path(inv) %></td>
+          <% if current_user.role == 'admin' %>
+          <td scope="row" class="center">
+            <%= link_to edit_inventory_path(inv) do %>
+              <i class="fas fa-pen-square fa-2x"></i>
+            <% end %>
+            </td>
+          <td scope="row" class="center">
+            <%= link_to inventory_path(inv), data: {:confirm => 'Are you sure?'}, :method => :delete do %>
+              <i class="fas fa-trash fa-2x"></i>
+            <% end %>
+        <% end %>
         </tr>
       <% end %>
     </table>

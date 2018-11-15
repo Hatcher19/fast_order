@@ -1,29 +1,46 @@
-<% if params[:type] == 'in' %>
-  <%= simple_form_for(@inventory) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<% if @inventory.new_record? %>
+  <% if params[:type] == 'in' %>
+    <%= simple_form_for(@inventory) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :sku, autofocus: true, :onchange => "this.form.submit()" %>
-      <%= f.input :count_in, :as => :hidden, input_html: {:value => 1} %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :sku, autofocus: true %>
+        <%= f.input :count_in, :as => :hidden, input_html: {:value => 1} %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-block btn-success' %>
-    </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-block btn-success' %>
+      </div>
+    <% end %>
+  <% elsif params[:type] == 'out' %>
+    <%= simple_form_for(@inventory) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <%= f.input :sku, autofocus: true %>
+        <%= f.input :count_out, :as => :hidden, input_html: {:value => 1} %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-block btn-success' %>
+      </div>
+    <% end %>
   <% end %>
-<% elsif params[:type] == 'out' %>
-  <%= simple_form_for(@inventory) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<% else %>
+    <%= simple_form_for(@inventory) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :sku, autofocus: true, :onchange => "this.form.submit()" %>
-      <%= f.input :count_out, :as => :hidden, input_html: {:value => 1} %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :sku, autofocus: true %>
+        <%= f.input :count_in %>
+        <%= f.input :count_out %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-block btn-success' %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-block btn-success' %>
+      </div>
+    <% end %>
 <% end %>
