@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @inventory.sku %>
+</p>
+
+<p>
+  <strong>Count in:</strong>
+  <%= @inventory.count_in %>
+</p>
+
+<p>
+  <strong>Count out:</strong>
+  <%= @inventory.count_out %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

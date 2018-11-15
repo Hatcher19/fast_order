@@ -1,0 +1,253 @@
+<p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 text-left">
+        <h5 class="card-title">Inventory</h5>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-2">
+        <%= link_to 'Add Inventory', new_inventory_path(:type => 'in'), class: 'btn btn-block btn-success' %>
+        <%= link_to 'subtract Inventory', new_inventory_path(:type => 'out'), class: 'btn btn-block btn-danger' %>
+      </div>
+    </div>
+    <br>
+    <table class="table table-condensed table-bordered card-text">
+      <thead>
+        <tr>
+          <th>COLOR</th>
+          <th>YS</th>
+          <th>YM</th>
+          <th>YL</th>
+          <th>YXL</th>
+          <th>S</th>
+          <th>M</th>
+          <th>L</th>
+          <th>XL</th>
+          <th>2XL</th>
+          <th>3XL</th>
+          <th>4XL</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+            <td>100 - BLACK</td>
+            <td><%= @inventories.where(sku: 'BLACK YS').sum(:count_in) - @inventories.where(sku: 'BLACK YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK YM').sum(:count_in) - @inventories.where(sku: 'BLACK YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK YL').sum(:count_in) - @inventories.where(sku: 'BLACK YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK YXL').sum(:count_in) - @inventories.where(sku: 'BLACK YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK S').sum(:count_in) - @inventories.where(sku: 'BLACK S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK M').sum(:count_in) - @inventories.where(sku: 'BLACK M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK L').sum(:count_in) - @inventories.where(sku: 'BLACK L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK XL').sum(:count_in) - @inventories.where(sku: 'BLACK XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK 2XL').sum(:count_in) - @inventories.where(sku: 'BLACK 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK 3XL').sum(:count_in) - @inventories.where(sku: 'BLACK 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'BLACK 4XL').sum(:count_in) - @inventories.where(sku: 'BLACK 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>025 - HTHR GRAY</td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY YS').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY YM').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY YL').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY YXL').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY S').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY M').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY L').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY XL').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY 2XL').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY 3XL').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HTHR GRAY 4XL').sum(:count_in) - @inventories.where(sku: 'HTHR GRAY 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>090 - CARBON</td>
+            <td><%= @inventories.where(sku: 'CARBON YS').sum(:count_in) - @inventories.where(sku: 'CARBON YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON YM').sum(:count_in) - @inventories.where(sku: 'CARBON YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON YL').sum(:count_in) - @inventories.where(sku: 'CARBON YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON YXL').sum(:count_in) - @inventories.where(sku: 'CARBON YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON S').sum(:count_in) - @inventories.where(sku: 'CARBON S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON M').sum(:count_in) - @inventories.where(sku: 'CARBON M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON L').sum(:count_in) - @inventories.where(sku: 'CARBON L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON XL').sum(:count_in) - @inventories.where(sku: 'CARBON XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON 2XL').sum(:count_in) - @inventories.where(sku: 'CARBON 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON 3XL').sum(:count_in) - @inventories.where(sku: 'CARBON 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CARBON 4XL').sum(:count_in) - @inventories.where(sku: 'CARBON 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>100 - WHITE</td>
+            <td><%= @inventories.where(sku: 'WHITE YS').sum(:count_in) - @inventories.where(sku: 'WHITE YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE YM').sum(:count_in) - @inventories.where(sku: 'WHITE YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE YL').sum(:count_in) - @inventories.where(sku: 'WHITE YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE YXL').sum(:count_in) - @inventories.where(sku: 'WHITE YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE S').sum(:count_in) - @inventories.where(sku: 'WHITE S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE M').sum(:count_in) - @inventories.where(sku: 'WHITE M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE L').sum(:count_in) - @inventories.where(sku: 'WHITE L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE XL').sum(:count_in) - @inventories.where(sku: 'WHITE XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE 2XL').sum(:count_in) - @inventories.where(sku: 'WHITE 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE 3XL').sum(:count_in) - @inventories.where(sku: 'WHITE 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'WHITE 4XL').sum(:count_in) - @inventories.where(sku: 'WHITE 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>301 - DK GREEN</td>
+            <td><%= @inventories.where(sku: 'DK GREEN YS').sum(:count_in) - @inventories.where(sku: 'DK GREEN YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN YM').sum(:count_in) - @inventories.where(sku: 'DK GREEN YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN YL').sum(:count_in) - @inventories.where(sku: 'DK GREEN YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN YXL').sum(:count_in) - @inventories.where(sku: 'DK GREEN YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN S').sum(:count_in) - @inventories.where(sku: 'DK GREEN S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN M').sum(:count_in) - @inventories.where(sku: 'DK GREEN M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN L').sum(:count_in) - @inventories.where(sku: 'DK GREEN L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN XL').sum(:count_in) - @inventories.where(sku: 'DK GREEN XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN 2XL').sum(:count_in) - @inventories.where(sku: 'DK GREEN 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN 3XL').sum(:count_in) - @inventories.where(sku: 'DK GREEN 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'DK GREEN 4XL').sum(:count_in) - @inventories.where(sku: 'DK GREEN 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>400 - ROYAL</td>
+            <td><%= @inventories.where(sku: 'ROYAL YS').sum(:count_in) - @inventories.where(sku: 'ROYAL YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL YM').sum(:count_in) - @inventories.where(sku: 'ROYAL YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL YL').sum(:count_in) - @inventories.where(sku: 'ROYAL YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL YXL').sum(:count_in) - @inventories.where(sku: 'ROYAL YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL S').sum(:count_in) - @inventories.where(sku: 'ROYAL S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL M').sum(:count_in) - @inventories.where(sku: 'ROYAL M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL L').sum(:count_in) - @inventories.where(sku: 'ROYAL L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL XL').sum(:count_in) - @inventories.where(sku: 'ROYAL XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL 2XL').sum(:count_in) - @inventories.where(sku: 'ROYAL 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL 3XL').sum(:count_in) - @inventories.where(sku: 'ROYAL 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ROYAL 4XL').sum(:count_in) - @inventories.where(sku: 'ROYAL 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>410 - NAVY</td>
+            <td><%= @inventories.where(sku: 'NAVY YS').sum(:count_in) - @inventories.where(sku: 'NAVY YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY YM').sum(:count_in) - @inventories.where(sku: 'NAVY YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY YL').sum(:count_in) - @inventories.where(sku: 'NAVY YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY YXL').sum(:count_in) - @inventories.where(sku: 'NAVY YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY S').sum(:count_in) - @inventories.where(sku: 'NAVY S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY M').sum(:count_in) - @inventories.where(sku: 'NAVY M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY L').sum(:count_in) - @inventories.where(sku: 'NAVY L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY XL').sum(:count_in) - @inventories.where(sku: 'NAVY XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY 2XL').sum(:count_in) - @inventories.where(sku: 'NAVY 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY 3XL').sum(:count_in) - @inventories.where(sku: 'NAVY 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'NAVY 4XL').sum(:count_in) - @inventories.where(sku: 'NAVY 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>475 - CAROLINA</td>
+            <td><%= @inventories.where(sku: 'CAROLINA YS').sum(:count_in) - @inventories.where(sku: 'CAROLINA YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA YM').sum(:count_in) - @inventories.where(sku: 'CAROLINA YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA YL').sum(:count_in) - @inventories.where(sku: 'CAROLINA YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA YXL').sum(:count_in) - @inventories.where(sku: 'CAROLINA YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA S').sum(:count_in) - @inventories.where(sku: 'CAROLINA S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA M').sum(:count_in) - @inventories.where(sku: 'CAROLINA M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA L').sum(:count_in) - @inventories.where(sku: 'CAROLINA L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA XL').sum(:count_in) - @inventories.where(sku: 'CAROLINA XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA 2XL').sum(:count_in) - @inventories.where(sku: 'CAROLINA 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA 3XL').sum(:count_in) - @inventories.where(sku: 'CAROLINA 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'CAROLINA 4XL').sum(:count_in) - @inventories.where(sku: 'CAROLINA 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>500 - PURPLE</td>
+            <td><%= @inventories.where(sku: 'PURPLE YS').sum(:count_in) - @inventories.where(sku: 'PURPLE YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE YM').sum(:count_in) - @inventories.where(sku: 'PURPLE YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE YL').sum(:count_in) - @inventories.where(sku: 'PURPLE YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE YXL').sum(:count_in) - @inventories.where(sku: 'PURPLE YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE S').sum(:count_in) - @inventories.where(sku: 'PURPLE S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE M').sum(:count_in) - @inventories.where(sku: 'PURPLE M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE L').sum(:count_in) - @inventories.where(sku: 'PURPLE L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE XL').sum(:count_in) - @inventories.where(sku: 'PURPLE XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE 2XL').sum(:count_in) - @inventories.where(sku: 'PURPLE 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE 3XL').sum(:count_in) - @inventories.where(sku: 'PURPLE 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'PURPLE 4XL').sum(:count_in) - @inventories.where(sku: 'PURPLE 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>600 - RED</td>
+            <td><%= @inventories.where(sku: 'RED YS').sum(:count_in) - @inventories.where(sku: 'RED YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED YM').sum(:count_in) - @inventories.where(sku: 'RED YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED YL').sum(:count_in) - @inventories.where(sku: 'RED YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED YXL').sum(:count_in) - @inventories.where(sku: 'RED YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED S').sum(:count_in) - @inventories.where(sku: 'RED S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED M').sum(:count_in) - @inventories.where(sku: 'RED M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED L').sum(:count_in) - @inventories.where(sku: 'RED L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED XL').sum(:count_in) - @inventories.where(sku: 'RED XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED 2XL').sum(:count_in) - @inventories.where(sku: 'RED 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED 3XL').sum(:count_in) - @inventories.where(sku: 'RED 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'RED 4XL').sum(:count_in) - @inventories.where(sku: 'RED 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>609 - MAROON</td>
+            <td><%= @inventories.where(sku: 'MAROON YS').sum(:count_in) - @inventories.where(sku: 'MAROON YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON YM').sum(:count_in) - @inventories.where(sku: 'MAROON YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON YL').sum(:count_in) - @inventories.where(sku: 'MAROON YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON YXL').sum(:count_in) - @inventories.where(sku: 'MAROON YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON S').sum(:count_in) - @inventories.where(sku: 'MAROON S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON M').sum(:count_in) - @inventories.where(sku: 'MAROON M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON L').sum(:count_in) - @inventories.where(sku: 'MAROON L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON XL').sum(:count_in) - @inventories.where(sku: 'MAROON XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON 2XL').sum(:count_in) - @inventories.where(sku: 'MAROON 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON 3XL').sum(:count_in) - @inventories.where(sku: 'MAROON 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'MAROON 4XL').sum(:count_in) - @inventories.where(sku: 'MAROON 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>731 - HI VIS YELLOW</td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW YS').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW YM').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW YL').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW YXL').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW S').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW M').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW L').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW XL').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW 2XL').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW 3XL').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'HI VIS YELLOW 4XL').sum(:count_in) - @inventories.where(sku: 'HI VIS YELLOW 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>750 - STEEL TOWN GOLD</td>
+            <td><%= @inventories.where(sku: 'STL YS').sum(:count_in) - @inventories.where(sku: 'STL YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL YM').sum(:count_in) - @inventories.where(sku: 'STL YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL YL').sum(:count_in) - @inventories.where(sku: 'STL YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL YXL').sum(:count_in) - @inventories.where(sku: 'STL YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL S').sum(:count_in) - @inventories.where(sku: 'STL S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL M').sum(:count_in) - @inventories.where(sku: 'STL M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL L').sum(:count_in) - @inventories.where(sku: 'STL L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL XL').sum(:count_in) - @inventories.where(sku: 'STL XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL 2XL').sum(:count_in) - @inventories.where(sku: 'STL 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL 3XL').sum(:count_in) - @inventories.where(sku: 'STL 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'STL 4XL').sum(:count_in) - @inventories.where(sku: 'STL 4XL').sum(:count_out) %></td>
+          </tr>
+          <tr>
+            <td>860 - ORANGE</td>
+            <td><%= @inventories.where(sku: 'ORANGE YS').sum(:count_in) - @inventories.where(sku: 'ORANGE YS').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE YM').sum(:count_in) - @inventories.where(sku: 'ORANGE YM').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE YL').sum(:count_in) - @inventories.where(sku: 'ORANGE YL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE YXL').sum(:count_in) - @inventories.where(sku: 'ORANGE YXL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE S').sum(:count_in) - @inventories.where(sku: 'ORANGE S').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE M').sum(:count_in) - @inventories.where(sku: 'ORANGE M').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE L').sum(:count_in) - @inventories.where(sku: 'ORANGE L').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE XL').sum(:count_in) - @inventories.where(sku: 'ORANGE XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE 2XL').sum(:count_in) - @inventories.where(sku: 'ORANGE 2XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE 3XL').sum(:count_in) - @inventories.where(sku: 'ORANGE 3XL').sum(:count_out) %></td>
+            <td><%= @inventories.where(sku: 'ORANGE 4XL').sum(:count_in) - @inventories.where(sku: 'ORANGE 4XL').sum(:count_out) %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 text-left">
+        <h5 class="card-title">History</h5>
+      </div>
+    </div>
+    <br>
+    <table class="table table-condensed table-bordered card-text">
+      <% @inventories.order('created_at DESC').each do |inv| %>
+        <tr>
+          <td><%= inv.sku %></td>
+          <td><%= inv.created_at.strftime("%m.%d.%Y %I:%M %P") %> EST</td>
+          <td><%= link_to "edit", edit_inventory_path(inv) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
