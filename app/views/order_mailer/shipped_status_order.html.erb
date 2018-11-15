@@ -6,8 +6,13 @@
   <body>
     <h3>Hi <%= @order.user.email %></h3>
     <p>
-      Order #<%= @order.id %> was shipped via <%= @order.ship_vendor %>
-      Here is your tracking number <%= @order.tracking %>
+      Order #<%= @order.id %> was shipped. 
+      <br>
+      <% if @order.ship_vendor == 'usps' %>
+        <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=<%= @order.tracking %>" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
+      <% elsif @order.ship_vendor == 'ups' %>
+        <a href="https://www.ups.com/track?loc=en_US&tracknum=<%= @order.tracking %>&requester=WT" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
+      <% end %>
       <%= link_to 'View Order', order_url(@order) %>
     </p>
   </body>
