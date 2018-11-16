@@ -3,23 +3,29 @@
 	  <div class="">
 	    <ul class="nav">
 	      <li class="nav-item">
-	      	<%= link_to "Dashboard", orders_path, class: 'nav-link active' %>
+	      	<%= link_to "Dashboard", orders_path, class: 'nav-link' %>
 	      </li>
-	      <li class="divider"></li>
+	      <div class="dropdown-divider"></div>
 	      <li class="nav-item">
 	      	<%= link_to "Orders", orders_path, class: 'nav-link' %>
 	      </li>
+	      <div class="dropdown-divider"></div>
 	      <li class="nav-item">
 	      	<%= link_to "New Order", new_order_path, class: 'nav-link' %>
 	      </li>
+	      <div class="dropdown-divider"></div>
 	      <li class="nav-item">
 	         <%= link_to "Visuals", products_path, class: 'nav-link' %>
 	      </li>
+	      <div class="dropdown-divider"></div>
 	      <% if current_user.role == 'admin' %>
             <li><%= link_to "Analytics", line_items_path, class: 'nav-link' %></li>
+            <div class="dropdown-divider"></div>
             <li><%= link_to "Inventory", inventories_path, class: 'nav-link' %></li>
+            <div class="dropdown-divider"></div>
           <% end %>
           <li><%= link_to "Account Settings", edit_user_registration_path, class: 'nav-link' %></li>
+          <div class="dropdown-divider"></div>
 	    </ul>
 	  </div>
 	</nav>
