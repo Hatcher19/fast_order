@@ -9,10 +9,12 @@
       Order #<%= @order.id %> was shipped. 
       <br>
       <% if @order.ship_vendor == 'usps' %>
-        <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=<%= @order.tracking %>" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
+        <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=<%= @order.tracking %>" target="_blank"> Click here for tracking </a>
       <% elsif @order.ship_vendor == 'ups' %>
-        <a href="https://www.ups.com/track?loc=en_US&tracknum=<%= @order.tracking %>&requester=WT" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
+        <a href="https://www.ups.com/track?loc=en_US&tracknum=<%= @order.tracking %>&requester=WT" target="_blank"> Click here for tracking </a>
       <% end %>
+      <br>
+      <br>
       <%= link_to 'View Order', order_url(@order) %>
     </p>
   </body>

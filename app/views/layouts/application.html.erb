@@ -19,8 +19,19 @@
     <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
     <% end %>
-     <div class="container-fluid">
-        <%= yield %>
-     </div>
+    <div class="container-fluid">
+      <% if user_signed_in? %>
+        <div class="row">
+          <%= render 'layouts/side_nav' %>
+          <div class="col-md-2"></div>
+          <div class="col-md-10">
+            <br>
+            <%= yield %>
+          </div>
+        </div>
+        <% else %>
+          <%= yield %>
+        <% end %>
+    </div>
   </body>
 </html>

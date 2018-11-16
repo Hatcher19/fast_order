@@ -3,11 +3,8 @@
 
 $body-bg:                          #ecf0f1;
 $font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                    45px;
+
 $navbar-default-bg:                white;
-$navbar-default-brand-color:       #c0392b;
-$brand-primary:                    #c0392b;
-$jumbotron-bg:                     white;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -15,9 +12,58 @@ $jumbotron-bg:                     white;
 .center {
      text-align: center;
 }
-
-.navbar-brand {
-     font-weight: bold;
+nav.navbar {
+    position: sticky;
+    z-index: 1000;
+}
+nav.navbar.fixed-top {
+    background-color: #34495e;
+    border-radius: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    top: 0;
+}
+a.navbar-brand {
+    background-color: #2c3e50;
+    font-weight: bold;
+    color: #e67e22 !important;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    line-height: 45px;
+    height: 50px;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+.col-md-2.navbar-header {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    height: 50px;
+    padding-right: 0px;
+}
+nav.col-md-2.sidebar {
+	background-color: #2c3e50;
+	color: white;
+	position: fixed;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	z-index: 100; /* Behind the navbar */
+	padding: 0;
+	height: calc(2000vh - 50px);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-weight: 700;
+}
+a.nav-link {
+	color: white;
 }
 
 @media print {

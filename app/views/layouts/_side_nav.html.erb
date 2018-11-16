@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+	<nav class="col-md-2 sidebar">
+	  <div class="">
+	    <ul class="nav">
+	      <li class="nav-item">
+	      	<%= link_to "Dashboard", orders_path, class: 'nav-link active' %>
+	      </li>
+	      <li class="divider"></li>
+	      <li class="nav-item">
+	      	<%= link_to "Orders", orders_path, class: 'nav-link' %>
+	      </li>
+	      <li class="nav-item">
+	      	<%= link_to "New Order", new_order_path, class: 'nav-link' %>
+	      </li>
+	      <li class="nav-item">
+	         <%= link_to "Visuals", products_path, class: 'nav-link' %>
+	      </li>
+	      <% if current_user.role == 'admin' %>
+            <li><%= link_to "Analytics", line_items_path, class: 'nav-link' %></li>
+            <li><%= link_to "Inventory", inventories_path, class: 'nav-link' %></li>
+          <% end %>
+          <li><%= link_to "Account Settings", edit_user_registration_path, class: 'nav-link' %></li>
+	    </ul>
+	  </div>
+	</nav>
+<% end %>

@@ -1,9 +1,6 @@
 <% if user_signed_in? %>
   <% if @orders.where(user_id: current_user).exists? %>
     <%= link_to "Create Order", new_order_path, class: 'btn btn-primary btn-lg' %>
-    <br><br>
-    <div class="jumbotron">
-    </div>
     <div class="">
       <div class="row">
         <div class="col-sm-6 col-md-6">
