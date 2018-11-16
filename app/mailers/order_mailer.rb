@@ -3,21 +3,21 @@ class OrderMailer < ActionMailer::Base
 
 	def new_order(order)
 	  @order = order
-	  mail to: @order.user.email, subject: "#{@order.entity} Order ##{@order.id} created."
+	  mail to: @order.user.email, cc: "orders@myshirtfund.com", subject: "#{@order.entity} Order ##{@order.id} created."
 	end
 
 	def approved_status_order(order)
 	  @order = order
-	  mail to: @order.user.email, subject: "#{@order.entity} Order ##{@order.id} is approved and awaiting product."
+	  mail to: @order.user.email, cc: "orders@myshirtfund.com", subject: "#{@order.entity} Order ##{@order.id} is approved and awaiting product."
 	end
 
 	def printing_status_order(order)
 	  @order = order
-	  mail to: @order.user.email, subject: "#{@order.entity} Order ##{@order.id} product has been received."
+	  mail to: @order.user.email, cc: "orders@myshirtfund.com", subject: "#{@order.entity} Order ##{@order.id} product has been received."
 	end
 
 	def shipped_status_order(order)
 	  @order = order
-	  mail to: @order.user.email, subject: "#{@order.entity} Order ##{@order.id} has shipped."
+	  mail to: @order.user.email, cc: "orders@myshirtfund.com", subject: "#{@order.entity} Order ##{@order.id} has shipped."
 	end
 end
