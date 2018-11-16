@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Hello <%= @message.order.user.email %>,</h3>
+    <p>
+      <%= @message.body %>
+    </p>
+    <br>
+    <br>
+    <a href="order.piratebayprinting.com/orders/<%= @message.order.id %>">View order</a>
+
+  </body>
+</html>

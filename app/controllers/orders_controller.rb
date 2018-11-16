@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def show
     @line_items = @order.line_items.group(:team, :shirtcolor, :inkcolor).sum(:shirt_quantity)
+    @message = Message.new
   end
 
   def new

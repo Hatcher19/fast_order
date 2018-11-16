@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_182908) do
+ActiveRecord::Schema.define(version: 2018_11_16_162503) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(version: 2018_11_14_182908) do
     t.string "file"
     t.integer "shirt_quantity"
     t.index ["order_id"], name: "index_line_items_on_order_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.integer "order_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_messages_on_order_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
