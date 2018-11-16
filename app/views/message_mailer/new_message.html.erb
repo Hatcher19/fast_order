@@ -10,7 +10,6 @@
     </p>
     <br>
     <br>
-    <a href="order.piratebayprinting.com/orders/<%= @message.order.id %>">View order</a>
-
+    <%= link_to 'View Order', order_url(@order) %>
   </body>
 </html>
