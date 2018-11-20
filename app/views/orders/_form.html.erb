@@ -32,6 +32,9 @@
         <div class="form-group">
           <%= f.input :ship_vendor, collection: ['', 'ups', 'fedex', 'usps' ], include_blank: false  %>
         </div>
+        <div class="form-group">
+          <%= f.input :ship_cost %>
+        </div>
       <% end %>
       <% if @order.new_record? %>
         <div class="form-group">
