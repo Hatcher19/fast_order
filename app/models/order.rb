@@ -7,5 +7,5 @@ class Order < ApplicationRecord
 	validates :spreadsheet_link, presence: true
 	validates :date, presence: true 
 
-	BIA_ENTITIES = [['Under The Lights', 'UTL'], ['Coast to Coast', 'CTC']]
+	BIA_ENTITIES = [['Under The Lights', 'UTL'], ['Coast to Coast', 'CTC'], ['Speed LAX', 'LAX']]
 end

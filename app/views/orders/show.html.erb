@@ -31,11 +31,13 @@
             <%= @order.address.city  %>, <%= @order.address.state  %> <%= @order.address.zipcode  %><br>
             <%= @order.user.email %><br>
             <% if @order.ship_vendor == 'usps' %>
-              <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=<%= @order.tracking %>" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
+              <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=<%= @order.tracking %>" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a><br>
             <% elsif @order.ship_vendor == 'ups' %>
               <a href="https://www.ups.com/track?loc=en_US&tracknum=<%= @order.tracking %>&requester=WT" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
+            <% end %><br>
+            <% if current_user.role =='admin'  %>
+              $<%= @order.ship_cost %><br>
             <% end %>
-            <%= @order.ship_cost %><br>
           </p>
         </div>
         <div class="col-md-4"></div>
