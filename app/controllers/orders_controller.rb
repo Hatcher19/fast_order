@@ -1,8 +1,16 @@
 class OrdersController < ApplicationController
-  load_and_authorize_resource
+  before_action :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource :only => [:new, :edit, :destroy]
+   
+  before_action :require_login
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+  def require_login
+    unless current_user
+      redirect_to new_user_session_path
+    end
+  end
 
   def index
     @orders = Order.all
