@@ -73,6 +73,8 @@ gem 'jquery-ui-rails'
 gem "figaro"
 gem 'sparkpost_rails'
 gem 'cancancan', '~> 1.9'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 group :production do
      gem 'pg'
      gem 'rails_12factor'

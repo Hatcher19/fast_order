@@ -106,4 +106,6 @@ Rails.application.configure do
     :host => 'order.piratebayprinting.com'
   }
 
+  config.assets.precompile += ['application.css.scss', 'application.js']
+
 end
