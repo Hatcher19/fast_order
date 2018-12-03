@@ -10,7 +10,6 @@
               <span class="badge badge-light">
                 <% if current_user.role == 'admin' %>
                   <%= Order.where(status: "new").count %>
-                  <%= Order.where(status: "new").sum(:shirt_quantity).to_f %>
                 <% else %>
                   <%= Order.where(status: "new", user: current_user).count %>
                 <% end %>
@@ -30,7 +29,6 @@
               <span class="badge badge-light">
                 <% if current_user.role == 'admin' %>
                   <%= Order.where(status: "approved").count %>
-                  <%= Order.where(status: "approved").sum(:shirt_quantity).to_f %>
                 <% else %>
                   <%= Order.where(status: "approved", user: current_user).count %>
                 <% end %>                  
@@ -50,7 +48,6 @@
               <span class="badge badge-light">
                 <% if current_user.role == 'admin' %>
                   <%= Order.where(status: "printing").count %>
-                  <%= Order.where(status: "printing").sum(:shirt_quantity).to_f %>
                 <% else %>
                   <%= Order.where(status: "printing", user: current_user).count %>
                 <% end %>                  
@@ -70,7 +67,6 @@
               <span class="badge badge-light">
                 <% if current_user.role == 'admin' %>
                   <%= Order.where(status: "shipped").count %>
-                  <%= Order.where(status: "shipped").sum(:shirt_quantity).to_f %>
                 <% else %>
                   <%= Order.where(status: "shipped", user: current_user).count %>
                 <% end %>                  
@@ -99,4 +95,4 @@
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
     </p>
   </div>
-<% end %>
+<% end %>  
