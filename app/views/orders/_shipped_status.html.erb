@@ -13,7 +13,7 @@
 
   <tbody>
     <% if current_user.role == "admin" %>
-      <% Order.where(status: "shipped").each do |order| %>
+      <% Order.where(status: "shipped", invoiced: false).each do |order| %>
         <tr>
           <!-- <td><%= order.user.email if order.user %></td> -->
           <td><%= link_to "#{order.id}", order %></td>

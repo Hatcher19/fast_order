@@ -71,6 +71,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:status, :date, :entity, :user_id, :address_id, :tracking, :ship_vendor, :ship_cost, :spreadsheet_link, line_items_attributes: [:id, :league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :shirt_quantity, :order_id])
+      params.require(:order).permit(:invoiced, :status, :date, :entity, :user_id, :address_id, :tracking, :ship_vendor, :ship_cost, :spreadsheet_link, line_items_attributes: [:id, :league, :team, :division, :shirtcolor, :inkcolor, :shirtsize, :shirt_quantity, :order_id])
     end
 end

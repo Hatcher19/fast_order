@@ -24,7 +24,7 @@
       <div class="row card-body">
         <div class="col-md-1"></div>
         <div class="col-md-4">
-          <h5 class="card-title">Ship to:</h5>
+          <h5 class="card-title">Ship To:</h5>
           <p class="card-text">
             <%= @order.address.contact_name  %><br>
             <%= @order.address.street  %><br>
@@ -41,7 +41,14 @@
             <% end %>
           </p>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h3>Invoiced?</h3>
+          <% if @order.invoiced == true %>
+            <i class="fas fa-check fa-9x" style="color: green"></i>
+          <% else %>
+            <i class="fas fa-times fa-9x" style="color: red"></i>
+          <% end %>
+        </div>
         <div class="col-md-3">
           <h5 class="card-title">Details</h5>
           <p class="card-text">
