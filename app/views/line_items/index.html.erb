@@ -20,7 +20,7 @@ Total: <%= @sum  %><br>
 		<tr>
 			<td><%= li.order_id %></td>
 			<td scope="row" class="center">
-	            <%= link_to line_item_path(line_item), data: {:confirm => 'Are you sure?'}, :method => :delete do %>
+	            <%= link_to line_item_path(li), data: {:confirm => 'Are you sure?'}, :method => :delete do %>
 	              <i class="fas fa-trash fa-2x"></i>
 	            <% end %>
 	        </td>
