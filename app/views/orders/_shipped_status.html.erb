@@ -27,6 +27,7 @@
               <a href="https://www.ups.com/track?loc=en_US&tracknum=<%= order.tracking %>&requester=WT" target="_blank"><i class="fa fa-truck fa-xl" aria-hidden="true"></i> Track </a>
             <% end %>
           </td>
+          <td><%= order.ship_cost %></td>
           <% if order.user == current_user %>
             <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td>
             <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
