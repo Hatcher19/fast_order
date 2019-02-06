@@ -9,7 +9,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <%= link_to 'Edit Order', edit_order_path(@order), class: 'dropdown-item' %>
-          <%= link_to 'Destroy', @order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
+          <%= link_to 'Destroy', @order, method: :delete_all, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
           <%= link_to 'Box label', 'box_label', class: 'dropdown-item', data: { toggle: 'modal', target: '#exampleModal' } %> 
           <%= link_to 'spreadsheet', @order.spreadsheet_link, class: 'dropdown-item' %>
           <%= link_to "Download PDF", order_path(@order, format: :pdf), download: "#{@order.entity} - order ##{@order.id}" %>
